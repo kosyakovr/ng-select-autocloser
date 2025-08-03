@@ -14,6 +14,7 @@ If I understood right, main reason why ng-select don't use backdrop layer to blo
 There are some ways to handle the issue.
 
 
+
 # Implementation
 
 This solution implements auto close ng-select dropdown by scroll in closest scrollable container.
@@ -37,22 +38,25 @@ If browser don't send scroll events by any reason, auto-close don't work:
   - no parent container with scroll for active ng-select.
 
 
+
 ## Base class NgSelectAutocloserBaseComponent
 
 You should use it as base class, to add auto-close feature to any component with ng-selects in template.
 
 We used it as base class for our dialog components.
 
-Remember, that queries viewChildren/contentChildren works in template of current component and don't track ng-selects in <ng-template> and child components.
+Remember, that queries viewChildren/contentChildren works in template of current component and don't track ng-selects in `<ng-template>` and child components.
 
 So you must add base class to **each** component with ng-selects inside.
 
 Directive ngSelectsAutocloser is alternative (see below).
 
 
+
 ## Directives
 
 Two directives are provided: ngSelectAutoclose and ngSelectsAutocloser
+
 
 
 ### Directive ngSelectsAutocloser
@@ -63,6 +67,7 @@ Use case: any template with ng-selects and tag-wrapper:
     <!-- ng-selects here -->
   </form>
 ```
+
 
 
 ### Directive ngSelectAutoclose
@@ -87,6 +92,7 @@ We used it in templates which rendered as part of grid container, like this:
 **This directive must be added to ng-select tag only, otherwise you will get NullInjectorError**
 
 
+
 ## Service NgSelectsAutocloserService
 
 It provides an boolean observable anyNgSelectOpen$.
@@ -96,11 +102,11 @@ You can use it in any place where you need to know if any ng-select dropdown is 
 We used it to temporarily disable closing our CDK dialogs by esc / backdrop click while ng-select dropdown is open.
 
 
+
 ## Setup & Configuration
 Register NgSelectsAutocloserService in providers section in app.config.ts
 
 By default, on scroll, service closes opened dropdown panel and unfocus ng-select.
-
 
 Unfocus feature implemented with ng-select's method blur().
 
@@ -121,6 +127,8 @@ You can change this behaviour with config options in app.config.ts:
     },
   },
 ```
+
+
 
 ## Usage in components
 Extend your component from base class:
@@ -147,6 +155,7 @@ export class MyComponentWithNgSelects implements OnInit {
 ```
 
 
+
 ## App styles
 
 Strongly recommend to add CSS rule to your app styles.
@@ -157,6 +166,7 @@ It blocks overscroll body movement at edge scroll positions.
     overscroll-behavior: none;
   }
 ```
+
 
 
 # Code notes
