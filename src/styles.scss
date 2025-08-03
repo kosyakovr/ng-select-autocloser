@@ -1,0 +1,32 @@
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+
+html, body {
+  overscroll-behavior: none;
+}
+
+body {
+  position: relative; // requirement of ng-select for appendTo=body
+}
+
+.container1 {
+  height: 200vh;
+}
+
+.link-wrapper {
+  padding: 1rem 0;
+}
+
+.container2 {
+  padding: 1rem;
+  max-height: 20rem;
+  overflow: auto;
+  border: 1px solid #ddd;
+}
+
+.stretcher {
+  height: 150vh;
+}
+
+.sel-wrapper {
+  width: 15rem;
+}
