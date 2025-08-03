@@ -1,5 +1,6 @@
 # What is it
 Angular-related package "@ng-select/ng-select" has an option to attach dropdown panel to body (appendTo="body").
+
 There is an scroll issue with this option: dropdown's position when user scrolls outside of dropdown panel and scrollable container is not window but inner tag.
 
 Issue described here:
@@ -18,13 +19,18 @@ There are some ways to handle the issue.
 This solution implements auto close ng-select dropdown by scroll in closest scrollable container.
 
 Code from our working project (Angular v19, zoneless change detection).
+
 Code didn't checked with Angular versions < 19 and with server-side rendering.
+
 Should work without changes in v17.2+ (with signal-based queries viewChildren()/contentChildren() and takeUntilDestroyed()).
+
 
 Code checked in latest versions of Chrome & clones, Safari, Firefox.
 
 Important note:
+
 This implementation closes dropdown by scroll events.
+
 If browser don't send scroll events by any reason, auto-close don't work:
   - scroll position already at the top but user still scrolls to top.
   - scroll position already at the bottom but user still scrolls to bottom.
@@ -40,6 +46,7 @@ We used it as base class for our dialog components.
 Remember, that queries viewChildren/contentChildren works in template of current component and don't track ng-selects in <ng-template> and child components.
 
 So you must add base class to **each** component with ng-selects inside.
+
 Directive ngSelectsAutocloser is alternative (see below).
 
 
