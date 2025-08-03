@@ -34,9 +34,11 @@ If browser don't send scroll events by any reason, auto-close don't work:
 ## Base class NgSelectAutocloserBaseComponent
 
 You should use it as base class, to add auto-close feature to any component with ng-selects in template.
+
 We used it as base class for our dialog components.
 
 Remember, that queries viewChildren/contentChildren works in template of current component and don't track ng-selects in <ng-template> and child components.
+
 So you must add base class to **each** component with ng-selects inside.
 Directive ngSelectsAutocloser is alternative (see below).
 
@@ -79,7 +81,9 @@ We used it in templates which rendered as part of grid container, like this:
 ## Service NgSelectsAutocloserService
 
 It provides an boolean observable anyNgSelectOpen$.
+
 You can use it in any place where you need to know if any ng-select dropdown is open.
+
 We used it to temporarily disable closing our CDK dialogs by esc / backdrop click while ng-select dropdown is open.
 
 
@@ -88,7 +92,9 @@ Register NgSelectsAutocloserService in providers section in app.config.ts
 
 By default, on scroll, service closes opened dropdown panel and unfocus ng-select.
 
+
 Unfocus feature implemented with ng-select's method blur().
+
 It works OK on desktops but may not work in mobile browsers (by our tests).
 
 You can change this behaviour with config options in app.config.ts:
@@ -135,6 +141,7 @@ export class MyComponentWithNgSelects implements OnInit {
 ## App styles
 
 Strongly recommend to add CSS rule to your app styles.
+
 It blocks overscroll body movement at edge scroll positions.
 ``` css
   html, body {
@@ -146,4 +153,5 @@ It blocks overscroll body movement at edge scroll positions.
 # Code notes
 
 This code provided AS IS.
+
 You can use this example in projects of any type and modify to match your needs.
