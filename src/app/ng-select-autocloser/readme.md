@@ -7,7 +7,7 @@ Issue described here:
 https://github.com/ng-select/ng-select/issues/1130
 https://github.com/ng-select/ng-select/issues/2456
 
-Actualy any container with overflow hidden/auto may need <ng-select appendTo="body"> to correct dropdown displaying: scrollable panels, dialogs with scrollable bodies, pages with fixed headers, etc.
+Actualy, any container with overflow hidden/auto may need `<ng-select appendTo="body">` to correct dropdown displaying: scrollable panels, dialogs with scrollable bodies, pages with fixed headers, etc.
 
 If I understood right, main reason why ng-select don't use backdrop layer to block scroll outside - it also will block search control, so search feature will not work.
 
