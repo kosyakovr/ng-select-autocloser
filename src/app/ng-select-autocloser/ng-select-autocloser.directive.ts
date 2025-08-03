@@ -2,7 +2,7 @@ import { contentChildren, DestroyRef, Directive, inject, OnInit } from '@angular
 import { toObservable } from '@angular/core/rxjs-interop';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectsAutocloserService } from './ng-select-autocloser.service';
-import { NgSelectsAutocloserBase } from './ng-select-autocloser-base';
+import { NgSelectsAutocloserInternalBase } from './ng-select-autocloser-base';
 
 /*
   Directive to auto-close child ng-selects on parent container scroll.
@@ -22,7 +22,7 @@ import { NgSelectsAutocloserBase } from './ng-select-autocloser-base';
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[ngSelectsAutocloser]',
 })
-export class NgSelectsAutocloserDirective extends NgSelectsAutocloserBase implements OnInit {
+export class NgSelectsAutocloserDirective extends NgSelectsAutocloserInternalBase implements OnInit {
   protected readonly destroyRef = inject(DestroyRef);
   protected readonly autocloserService = inject(NgSelectsAutocloserService);
 

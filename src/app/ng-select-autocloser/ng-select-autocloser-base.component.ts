@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, DestroyRef, inject, viewChildren } 
 import { toObservable } from '@angular/core/rxjs-interop';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectsAutocloserService } from './ng-select-autocloser.service';
-import { NgSelectsAutocloserBase } from './ng-select-autocloser-base';
+import { NgSelectsAutocloserInternalBase } from './ng-select-autocloser-base';
 
 /**
  * Base class to add auto-close feature to components with ng-selects in template.
@@ -13,7 +13,7 @@ import { NgSelectsAutocloserBase } from './ng-select-autocloser-base';
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgSelectAutocloserBaseComponent extends NgSelectsAutocloserBase {
+export class NgSelectAutocloserBaseComponent extends NgSelectsAutocloserInternalBase {
   protected readonly destroyRef = inject(DestroyRef);
   protected readonly autocloserService = inject(NgSelectsAutocloserService);
 

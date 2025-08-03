@@ -12,7 +12,7 @@ interface NgSelectSubscription {
 /**
  * Base class for internal usage.
  */
-export class NgSelectsAutocloserBase {
+export class NgSelectsAutocloserInternalBase {
   protected subscriptions: NgSelectSubscription[] = [];
 
   protected initAutocloser(

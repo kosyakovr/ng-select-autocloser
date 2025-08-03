@@ -84,6 +84,8 @@ We used it in templates which rendered as part of grid container, like this:
   </ng-template>
 ```
 
+**This directive must be added to ng-select tag only, otherwise you will get NullInjectorError**
+
 
 ## Service NgSelectsAutocloserService
 

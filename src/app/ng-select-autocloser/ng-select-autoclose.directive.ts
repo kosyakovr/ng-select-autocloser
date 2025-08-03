@@ -15,6 +15,8 @@ import { NgSelectsAutocloserService } from './ng-select-autocloser.service';
 
   For components it's better to use base class NgSelectAutocloserBaseComponent or NgSelectsAutocloserDirective.
   They handles all ng-selects in the component's template.
+
+  If you add this directive to other tag than <ng-select>, you will get NullInjectorError error.
 */
 
 @Directive({
