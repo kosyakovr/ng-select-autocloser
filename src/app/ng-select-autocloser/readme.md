@@ -25,6 +25,9 @@ Code didn't checked with Angular versions < 19 and with server-side rendering.
 
 Should work without changes in v17.2+ (with signal-based queries viewChildren()/contentChildren() and takeUntilDestroyed()).
 
+**This branch provides code for Angular v19 / ng-select v14.**
+**Use branch angular-20-ng-select-20 for code compatible with Angular v20 / ng-select v20**
+
 
 Code checked in latest versions of Chrome & clones, Safari, Firefox.
 
