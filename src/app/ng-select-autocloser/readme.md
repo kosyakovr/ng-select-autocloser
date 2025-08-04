@@ -37,6 +37,7 @@ If browser don't send scroll events by any reason, auto-close don't work:
   - scroll position already at the bottom but user still scrolls to bottom.
   - no parent container with scroll for active ng-select.
 
+On other side, no scroll - no issue with dropdown position :-)
 
 
 ## Base class NgSelectAutocloserBaseComponent
