@@ -1,0 +1,18 @@
+<div>
+  <h2>Demo page with directive "ngselAutocloseThis" (for one specific ng-select)</h2>
+
+  <div class="link-wrapper">
+    <a routerLink="/demo-directive-2">Page with directive "ngselAutoclose"</a>
+    <a routerLink="/demo-component">Page with base component demo</a>
+  </div>
+
+  <div class="container2">
+    <p>Inner scrollable container</p>
+
+    <div class="sel-wrapper">
+      <ng-select ngselAutocloseThis appendTo="body" [items]="testItems()"></ng-select>
+    </div>
+
+    <div class="stretcher"></div>
+  </div>
+</div>
