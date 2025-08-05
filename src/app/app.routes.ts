@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { DemoBaseComponent } from './demo-base-component/demo-base-component.component';
-import { DemoDirectiveComponent } from './demo-directive/demo-directive.component';
+import { DemoDirective1Component } from './demo-directive-1/demo-directive-1.component';
+import { DemoDirective2Component } from './demo-directive-2/demo-directive-2.component';
 
 export const routes: Routes = [
   {
@@ -8,11 +9,15 @@ export const routes: Routes = [
     component: DemoBaseComponent,
   },
   {
-    path: 'demo-directive',
-    component: DemoDirectiveComponent,
+    path: 'demo-directive-1',
+    component: DemoDirective1Component,
+  },
+  {
+    path: 'demo-directive-2',
+    component: DemoDirective2Component,
   },
   {
     path: '**',
-    redirectTo: 'demo-directive',
+    redirectTo: 'demo-directive-2',
   }
 ];
