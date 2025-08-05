@@ -1,4 +1,3 @@
-/* eslint-disable @smarttools/rxjs/no-nested-subscribe */
 import { DestroyRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NgSelectComponent } from '@ng-select/ng-select';
