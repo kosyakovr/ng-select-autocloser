@@ -22,8 +22,8 @@ export class NgSelectsAutocloserInternalBase {
   ) {
     ngSelects$
       .pipe(
-        takeUntilDestroyed(destroyRef),
         debounceTime(50),
+        takeUntilDestroyed(destroyRef),
       )
       .subscribe((ngSelects) => {
         this.subscriptions.forEach((s) => {

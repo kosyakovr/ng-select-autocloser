@@ -45,8 +45,8 @@ export class NgSelectsAutocloserService {
   protected initNgSelectParentScrollListener() {
     this.ngSelectParentScrolled
       .pipe(
-        takeUntilDestroyed(this.destroyRef),
         throttleTime(20),
+        takeUntilDestroyed(this.destroyRef),
       )
       .subscribe(() => {
         if (this.openedNgSelect?.ngSel.isOpen) {
