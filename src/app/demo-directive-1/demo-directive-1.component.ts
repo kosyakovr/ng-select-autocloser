@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { NgSelectComponent } from '@ng-select/ng-select';
 import { NgSelectAutocloseThisDirective } from '../ng-select-autoclose/ng-select-autoclose-this.directive';
 import { selectItems } from '../mock-data';
@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
     RouterLink,
   ],
   templateUrl: './demo-directive-1.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DemoDirective1Component {
   readonly testItems = signal(selectItems);
